@@ -8,4 +8,5 @@ class ProductNode(DjangoObjectType):
 
     class Meta:
         model = Product
+        filter_fields = ['name', ]
         interfaces = (relay.Node,)

@@ -4,6 +4,7 @@ from rx import Observable
 from channels import Group
 from products.schemas import ProductNode
 from products.models import Product
+from graphene_django.filter import DjangoFilterConnectionField
 
 
 def make_sub(info, gid):
@@ -20,6 +21,8 @@ def make_sub(info, gid):
 
 class Query(graphene.ObjectType):
     hello = graphene.String()
+    product = relay.node.Field(ProductNode, id=graphene.Int())
+    products = DjangoFilterConnectionField(ProductNode)
 
     def resolve_hello(self, info, **kwargs):
         return 'world'

@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 import json
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from .template import render_graphiql
 from django.http import HttpResponse
+from django.conf import settings
 
 from graphene_django.views import GraphQLView
 from django.views.decorators.csrf import csrf_exempt
@@ -33,6 +34,12 @@ urlpatterns = [
     url(r'^graphiql/', graphiql),
     url(r'^graphql', csrf_exempt(GraphQLView.as_view(graphiql=True)))
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]
 
 from channels.routing import route_class, route
 from graphql_ws.django_channels import GraphQLSubscriptionConsumer

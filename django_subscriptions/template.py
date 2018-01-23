@@ -19,12 +19,12 @@ def render_graphiql():
     }
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/graphiql/0.11.10/graphiql.css" rel="stylesheet" />
-  <script src="//cdn.jsdelivr.net/fetch/0.9.0/fetch.min.js"></script>
-  <script src="//cdn.jsdelivr.net/react/15.0.0/react.min.js"></script>
-  <script src="//cdn.jsdelivr.net/react/15.0.0/react-dom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/fetch/0.9.0/fetch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/react/15.0.0/react.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/react/15.0.0/react-dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/graphiql/0.11.10/graphiql.js"></script>
-  <script src="//unpkg.com/subscriptions-transport-ws@${SUBSCRIPTIONS_TRANSPORT_VERSION}/browser/client.js"></script>
-  <script src="//unpkg.com/graphiql-subscriptions-fetcher@0.0.2/browser/client.js"></script>
+  <script src="https://unpkg.com/subscriptions-transport-ws@${SUBSCRIPTIONS_TRANSPORT_VERSION}/browser/client.js"></script>
+  <script src="https://unpkg.com/graphiql-subscriptions-fetcher@0.0.2/browser/client.js"></script>
 </head>
 <body>
   <script>
@@ -119,7 +119,7 @@ def render_graphiql():
 </html>''').substitute(
         GRAPHIQL_VERSION='0.11.10',
         SUBSCRIPTIONS_TRANSPORT_VERSION='0.7.0',
-        subscriptionsEndpoint='ws://localhost:8000/subscriptions',
+        subscriptionsEndpoint='ws://192.168.101.39:8000/subscriptions',
         # subscriptionsEndpoint='ws://localhost:5000/',
         endpointURL='/graphql',
     )
