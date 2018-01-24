@@ -32,3 +32,4 @@ typing==3.6.2
 wrapt==1.10.11
 zope.interface==4.4.3
 git+https://github.com/CarlosMart626/graphql-ws.git@master#egg=graphql-ws
+django-filter=1.1.0

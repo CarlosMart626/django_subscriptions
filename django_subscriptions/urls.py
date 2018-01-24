@@ -35,11 +35,11 @@ urlpatterns = [
     url(r'^graphql', csrf_exempt(GraphQLView.as_view(graphiql=True)))
 ]
 
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    ]
+# if settings.DEBUG:
+#     import debug_toolbar
+#     urlpatterns += [
+#         url(r'^__debug__/', include(debug_toolbar.urls)),
+#     ]
 
 from channels.routing import route_class, route
 from graphql_ws.django_channels import GraphQLSubscriptionConsumer
